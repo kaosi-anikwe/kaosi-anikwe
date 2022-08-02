@@ -1,7 +1,7 @@
 <img allign="right" width="1000" alt="Web Development" src="https://w7.pngwing.com/pngs/450/193/png-transparent-web-development-web-design-web-banner-web-application-web-design-search-engine-optimization-web-design-mobile-app-development.png">
 <h1 align="center">Hi 👋, I'm Kaosi</h1>
 <h3 align="center">A passionate full stack developer from Nigeria</h3>
-<img allign="right" alt="Coding" width="1000" src="https://sagaratechnology.com/blog/wp-content/uploads/2020/09/1_LEH5tUEQReWe8Iu-UEV3Pg.gif">
+<img allign="right" alt="Coding" width="800" src="https://sagaratechnology.com/blog/wp-content/uploads/2020/09/1_LEH5tUEQReWe8Iu-UEV3Pg.gif">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=kaosi-anikwe&label=Profile%20views&color=0e75b6&style=flat" alt="kaosi-anikwe" /> </p>
 
