@@ -114,8 +114,12 @@ export default function Portfolio() {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const raw = max > 0 ? window.scrollY / max : 0;
       const start = 0.7;
-      const p = Math.max(0, Math.min(1, (raw - start) / (1 - start)));
-      setScrollProgress(p);
+      const linear = Math.max(0, Math.min(1, (raw - start) / (1 - start)));
+      // cubic ease-in-out for a slower, gentler ramp
+      const eased = linear < 0.5
+        ? 4 * linear * linear * linear
+        : 1 - Math.pow(-2 * linear + 2, 3) / 2;
+      setScrollProgress(eased);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
