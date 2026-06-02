@@ -1,0 +1,20 @@
+---
+import Portfolio from '../components/Portfolio';
+import '../styles/globals.css';
+---
+
+<html lang="en" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Abdul Samad — Personal Portfolio" />
+		<title>Abdul Samad</title>
+		<style>html, body { height: 100%; margin: 0; }</style>
+	</head>
+	<body>
+		<Portfolio client:load />
+	</body>
+</html>
