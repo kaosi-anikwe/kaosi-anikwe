@@ -1,17 +1,61 @@
 ---
 import Portfolio from '../components/Portfolio';
 import '../styles/globals.css';
+
+const title = "Kaosi Anikwe — Backend Developer";
+const description = "Portfolio of Kaosi Anikwe, a backend developer specializing in Python, FastAPI, Flask, and PostgreSQL. Explore projects including REST APIs, retry engines, and developer tools.";
+const url = "https://kaosi-anikwe.pages.dev";
+const image = `${url}/og.png`;
 ---
 
 <html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Abdul Samad — Personal Portfolio" />
-		<title>Abdul Samad</title>
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Kaosi Anikwe" />
+		<meta name="keywords" content="Kaosi Anikwe, backend developer, Python, FastAPI, Flask, PostgreSQL, REST API, portfolio, HNG" />
+		<link rel="canonical" href={url} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:site_name" content="Kaosi Anikwe" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Kaosi Anikwe",
+			"url": url,
+			"jobTitle": "Backend Developer",
+			"email": "anikwehenryasa@gmail.com",
+			"sameAs": [
+				"https://github.com/kaosi-anikwe",
+				"https://www.linkedin.com/in/kaosi-anikwe/"
+			]
+		})} />
+
 		<style>html, body { height: 100%; margin: 0; }</style>
 	</head>
 	<body>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kaosi-anikwe.pages.dev/sitemap-index.xml
