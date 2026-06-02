@@ -16,6 +16,6 @@ I build APIs, async systems, and data pipelines — mostly in Python. Currently 
 
 ### Stats
 
-<p><img src="https://github-readme-stats.vercel.app/api/top-langs?username=kaosi-anikwe&show_icons=true&locale=en&layout=compact&theme=transparent&hide_border=true" alt="kaosi-anikwe" /></p>
+<p><img src="https://github-readme-stats-kaosi-anikwe.vercel.app/api/top-langs/?username=kaosi-anikwe&show_icons=true&locale=en&layout=compact&theme=transparent&hide_border=true" alt="kaosi-anikwe" /></p>
 
-<p><img src="https://github-readme-streak-stats.herokuapp.com/?user=kaosi-anikwe&theme=transparent&hide_border=true" alt="kaosi-anikwe" /></p>
+<p><img src="https://streak-stats.demolab.com/?user=kaosi-anikwe&theme=transparent&hide_border=true" alt="kaosi-anikwe" /></p>
