@@ -233,6 +233,13 @@ export default function Portfolio() {
             <SocialIcon href={`mailto:${email}`} label="Email">
               <Mail size={16} />
             </SocialIcon>
+            <a
+              href="/blog"
+              className="opacity-40 hover:opacity-100 transition-opacity text-[10px] uppercase"
+              style={{ letterSpacing: "1px", fontFamily: mono }}
+            >
+              Writing
+            </a>
           </div>
         </section>
 

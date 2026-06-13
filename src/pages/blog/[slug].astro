@@ -1,0 +1,125 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import BlogLayout from "../../components/BlogLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.mdx?$/, "") },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const siteUrl = "https://kaosi-anikwe.pages.dev";
+const slug = post.id.replace(/\.mdx?$/, "");
+const postUrl = `${siteUrl}/blog/${slug}`;
+const readingTime = Math.ceil((post.body ?? "").split(/\s+/).length / 200);
+---
+
+<BlogLayout
+  title={`${post.data.title} — Kaosi Anikwe`}
+  description={post.data.description}
+  canonicalUrl={postUrl}
+  ogType="article"
+  publishedTime={post.data.pubDate.toISOString()}
+>
+  <style slot="head">
+    html, body { height: 100%; margin: 0; }
+    body { background: #000; color: #fff; font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  </style>
+
+  <div class="relative min-h-screen w-full">
+    <!-- Ambient top gradient -->
+    <div
+      aria-hidden
+      class="pointer-events-none fixed inset-x-0 top-0 h-[40vh] z-0"
+      style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(120,20,55,0.25) 0%, rgba(0,0,0,0) 100%);"
+    ></div>
+
+    <div class="relative z-10 mx-auto w-full max-w-160 px-8">
+
+      <!-- NAV -->
+      <nav class="pt-10 pb-4 flex items-center justify-between">
+        <a
+          href="/blog"
+          class="opacity-40 hover:opacity-100 transition-opacity text-[10px] uppercase"
+          style="letter-spacing: 1px; font-family: 'JetBrains Mono', monospace;"
+        >
+          ← Writing
+        </a>
+        <a
+          href="/"
+          class="opacity-30 hover:opacity-80 transition-opacity text-[10px] uppercase"
+          style="letter-spacing: 1px; font-family: 'JetBrains Mono', monospace;"
+        >
+          Portfolio
+        </a>
+      </nav>
+
+      <!-- POST HEADER -->
+      <header class="pt-14 pb-10 border-b border-white/10">
+        <p
+          class="text-[10px] uppercase opacity-30 mb-4"
+          style="letter-spacing: 1px; font-family: 'JetBrains Mono', monospace;"
+        >
+          {post.data.pubDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })} · {readingTime} min read
+        </p>
+        <h1
+          class="text-[36px] leading-tight"
+          style="font-weight: 500; letter-spacing: -1px;"
+        >
+          {post.data.title}
+        </h1>
+        <p
+          class="opacity-50 mt-3 text-[15px] leading-6"
+          style="font-weight: 300;"
+        >
+          {post.data.description}
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          {post.data.tags.map((tag) => (
+            <span
+              class="text-[10px] uppercase px-2 py-0.5 rounded border border-white/10 text-white/40"
+              style="letter-spacing: 0.5px; font-family: 'JetBrains Mono', monospace;"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </header>
+
+      <!-- POST BODY -->
+      <article class="prose pt-10 pb-20 max-w-none">
+        <Content />
+      </article>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-white/10 pt-10 pb-10 flex items-center justify-between">
+        <p
+          class="text-[10px] uppercase leading-3.75 opacity-30"
+          style="font-weight: 500; letter-spacing: 1px;"
+        >
+          © 2026 Kaosi Anikwe.<br />
+          All Rights Reserved.
+        </p>
+        <a
+          href="/blog"
+          class="opacity-30 hover:opacity-80 transition-opacity text-[10px] uppercase"
+          style="letter-spacing: 1px;"
+        >
+          ← All posts
+        </a>
+      </footer>
+    </div>
+  </div>
+</BlogLayout>
