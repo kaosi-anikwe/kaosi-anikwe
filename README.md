@@ -2,7 +2,7 @@
 
 **Full Stack Developer** from Nigeria.
 
-I build APIs, async systems, and data pipelines — mostly in Python. Currently working on [Monimata](https://github.com/kaosi-anikwe/monimata), a budgeting app.
+I build APIs, async systems, and data pipelines — mostly in Python. Currently working on [MoniMata](https://github.com/kaosi-anikwe/monimata), a budgeting app.
 
 🌐 [Portfolio](https://kaosi-anikwe.pages.dev) · 💼 [LinkedIn](https://www.linkedin.com/in/kaosi-anikwe/) · 🐦 [Twitter](https://twitter.com/kaosi__)
 
@@ -10,7 +10,7 @@ I build APIs, async systems, and data pipelines — mostly in Python. Currently 
 
 ### Tech I work with
 
-`Python` `FastAPI` `Flask` `PostgreSQL` `Redis` `SQLAlchemy` `Docker` `JavaScript` `React` `Node.js` `Git` `AWS`
+`Python` `FastAPI` `Flask` `PostgreSQL` `Redis` `SQLAlchemy` `Docker` `TypeScript` `React` `Node.js` `Git` `AWS`
 
 ---
 
